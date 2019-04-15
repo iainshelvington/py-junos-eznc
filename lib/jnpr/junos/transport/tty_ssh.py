@@ -116,6 +116,8 @@ class SSH(Terminal):
         self._ssh.read_until = self._read_until
         self._rx = self._ssh
         self.write('\n')
+        if self.cs_port:
+            self.write('{}\n'.format(self.cs_port))
 
     def _tty_close(self):
         self._ssh_pre.close()
