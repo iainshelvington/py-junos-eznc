@@ -80,6 +80,7 @@ class Terminal(object):
         self.passwd = kvargs.get('passwd', '')
         self.cs_user = kvargs.get('cs_user')
         self.cs_passwd = kvargs.get('cs_passwd')
+        self.cs_port = kvargs.get('cs_port')
         self.login_attempts = kvargs.get('attempts') or self.LOGIN_RETRY
         self.console_has_banner = kvargs.get('console_has_banner') or False
 
