@@ -109,6 +109,7 @@ class Console(_Connection):
             '')
         self.cs_user = kvargs.get('cs_user')
         self.cs_passwd = kvargs.get('cs_passwd')
+        self.cs_port = kvargs.get('cs_port')
         self._port = kvargs.get('port', '22' if self.cs_user else '23')
         self._mode = kvargs.get('mode', None if self.cs_user else 'telnet')
         self._baud = kvargs.get('baud', '9600')
@@ -299,6 +300,7 @@ class Console(_Connection):
         elif self.cs_user is not None:
             tty_args['cs_user'] = self.cs_user
             tty_args['cs_passwd'] = self.cs_passwd
+            tty_args['cs_port'] = self.cs_port
             tty_args['host'] = self._hostname
             tty_args['port'] = self._port
             tty_args['console_has_banner'] = self.console_has_banner
